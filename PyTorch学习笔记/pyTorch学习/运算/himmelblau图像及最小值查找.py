@@ -6,8 +6,13 @@ import torch
 def himmelblau(x):
     return (x[0]**2+x[1]-11)**2+(x[0]+x[1]**2-7)**2
 
+<<<<<<< HEAD
 x = np.arange(-6, 6, 0.1)    #间隔0.1，范围为-6-6
 y = np.arange(-6, 6, 0.1)    #y轴
+=======
+x = np.arange(-6, 6, 0.1)
+y = np.arange(-6, 6, 0.1)
+>>>>>>> Notebook/master
 X, Y = np.meshgrid(x, y)     #相当于生成两个图片,匹配XY轴
 
 print(X.shape, Y.shape)
