@@ -1,6 +1,8 @@
 import torch
+x = torch.randn(3,4,10)
 
-x = torch.ones(4,2)
+for i in x:
+    print(i.shape)
 
-print(x)
+
 

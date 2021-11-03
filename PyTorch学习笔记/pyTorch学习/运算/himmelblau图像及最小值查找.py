@@ -6,13 +6,9 @@ import torch
 def himmelblau(x):
     return (x[0]**2+x[1]-11)**2+(x[0]+x[1]**2-7)**2
 
-<<<<<<< HEAD
-x = np.arange(-6, 6, 0.1)    #间隔0.1，范围为-6-6
-y = np.arange(-6, 6, 0.1)    #y轴
-=======
 x = np.arange(-6, 6, 0.1)
 y = np.arange(-6, 6, 0.1)
->>>>>>> Notebook/master
+
 X, Y = np.meshgrid(x, y)     #相当于生成两个图片,匹配XY轴
 
 print(X.shape, Y.shape)
@@ -38,10 +34,10 @@ for i in range(20000):
     pred.backward()    #获得一个梯度信息
     optimizer.step()   #梯度信息优化更新。
 
-    '''
-     if i % 200 == 0:
-        print(i, x.tolist(), pred.item())     # tolist将数组和矩阵转换成列表
 
-    '''
+
+    print(i, x.tolist(), pred.item())     # tolist将数组和矩阵转换成列表
+
+
 
 
