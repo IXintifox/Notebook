@@ -18,7 +18,7 @@ import torch.nn.functional as F
 x = torch.ones(1,requires_grad=True)
 w = torch.full([1],2., requires_grad=True)
 #print(w.type())
-mes = F.mse_loss(torch.ones(1),x*w)    #参数(实际值,预测值)  (1,2)
+mes = F.mse_loss(torch.ones(1),x*w)    #参数(预测值 实际值,)  (1,2)
 print('mes',mes)
 print(w)
 
