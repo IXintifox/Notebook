@@ -49,7 +49,15 @@ for iter in range(6000):                                                  # 训�
 
     loss = criterion(output,y)                                                     # 计算loss，           %%%%%%暂时未知， 预测值 真实值   x预测的是下一个点，所以与下一个点作差值
     model.zero_grad()                                                              # 梯度清零
-    loss.backward()                                                                # 损失反向传播
+    loss.backward()  # 损失反向传播
+
+    #解决梯度爆炸
+    """   
+    for p in model.parameters():
+           if p.grad.norm() > 0.01:
+               torch.nn.utils.clip_grad_norm_(p,0.01)
+    """
+
     optimizer.step()                                                               # 优化每一步函数
 
     if iter % 300 == 0:                                                            # 输出步骤优化
