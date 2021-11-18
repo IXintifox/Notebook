@@ -51,14 +51,14 @@ class SmellbrainArea:
 
 class Brain:
     def __init__(self):
-        self.hear_area = HearbrainArea(randint(2000,10000))
-        self.smell_area = SmellbrainArea(randint(2000,10000))   #7000
+        self.hear_area = HearbrainArea(1)
+        self.smell_area = SmellbrainArea(1)   #7000
 
     def process(self,x):
-        return {'嗅觉信号':lambda p:self.smell_area.process(x),'听觉信号':lambda p:self.hear_area.process(x)}[x.signal_type](x)
+        return {'嗅觉信号':lambda p:self.smell_area.process(x),'听觉信号':lambda p:self.hear_area.process(x)}[x.signal_type](x)     #后面x将信号中的[x.signal_type]传入给前面的(x)
 
 
 #调用
 brain = Brain()
-hear = Signal_input('听觉信号','好美的歌！')
+hear = Signal_input('听觉信号','好美的歌')
 brain.process(hear)
